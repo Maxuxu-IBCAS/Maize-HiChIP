@@ -1,0 +1,16 @@
+samtools view -bS -q 20 BM1-4_L2_A041.R1.fastq.B73.sam | samtools view -h - >BM1-4_L2_A041.R1.fastq.B73.q20.sam &
+samtools view -bS -q 20 BM1-4_L2_A041.R1.fastq.Mo17.sam | samtools view -h - >BM1-4_L2_A041.R1.fastq.Mo17.q20.sam &
+samtools view -bS -q 20 BM1-4_L2_A041.R2.fastq.B73.sam | samtools view -h - >BM1-4_L2_A041.R2.fastq.B73.q20.sam &
+samtools view -bS -q 20 BM1-4_L2_A041.R2.fastq.Mo17.sam | samtools view -h - >BM1-4_L2_A041.R2.fastq.Mo17.q20.sam &
+samtools view -bS -q 20 BM30-211028_L4_A038.R1.fastq.B73.sam | samtools view -h - >BM30-211028_L4_A038.R1.fastq.B73.q20.sam &
+samtools view -bS -q 20 BM30-211028_L4_A038.R1.fastq.Mo17.sam | samtools view -h - >BM30-211028_L4_A038.R1.fastq.Mo17.q20.sam &
+samtools view -bS -q 20 BM30-211028_L4_A038.R2.fastq.B73.sam | samtools view -h - >BM30-211028_L4_A038.R2.fastq.B73.q20.sam &
+samtools view -bS -q 20 BM30-211028_L4_A038.R2.fastq.Mo17.sam | samtools view -h - >BM30-211028_L4_A038.R2.fastq.Mo17.q20.sam &
+samtools view -bS -q 20 MB1-4-211217_L2_A039.R1.fastq.B73.sam | samtools view -h - >MB1-4-211217_L2_A039.R1.fastq.B73.q20.sam &
+samtools view -bS -q 20 MB1-4-211217_L2_A039.R1.fastq.Mo17.sam | samtools view -h - >MB1-4-211217_L2_A039.R1.fastq.Mo17.q20.sam &
+samtools view -bS -q 20 MB1-4-211217_L2_A039.R2.fastq.B73.sam | samtools view -h - >MB1-4-211217_L2_A039.R2.fastq.B73.q20.sam &
+samtools view -bS -q 20 MB1-4-211217_L2_A039.R2.fastq.Mo17.sam | samtools view -h - >MB1-4-211217_L2_A039.R2.fastq.Mo17.q20.sam &
+samtools view -bS -q 20 MB2-4-211217_L2_A042.R1.fastq.B73.sam | samtools view -h - >MB2-4-211217_L2_A042.R1.fastq.B73.q20.sam &
+samtools view -bS -q 20 MB2-4-211217_L2_A042.R1.fastq.Mo17.sam | samtools view -h - >MB2-4-211217_L2_A042.R1.fastq.Mo17.q20.sam &
+samtools view -bS -q 20 MB2-4-211217_L2_A042.R2.fastq.B73.sam | samtools view -h - >MB2-4-211217_L2_A042.R2.fastq.B73.q20.sam &
+samtools view -bS -q 20 MB2-4-211217_L2_A042.R2.fastq.Mo17.sam | samtools view -h - >MB2-4-211217_L2_A042.R2.fastq.Mo17.q20.sam &
