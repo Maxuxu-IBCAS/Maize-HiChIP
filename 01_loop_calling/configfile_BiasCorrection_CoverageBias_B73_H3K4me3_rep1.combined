@@ -1,0 +1,74 @@
+#==================================== 
+# Sample configuration file for running FitHiChIP
+#====================================  
+
+#*****************************
+# important parameters
+#*****************************
+
+# File containing the valid pairs from HiCPro pipeline 
+# Can be either a text file, or a gzipped text file 
+#ValidPairs=/scratch.global/liang795/HiChIP/Mo17RefGenome/B73-to-SimuB73ref/hicprotest-B73-SimuB73ref-rep1-H3K27ac-rest-results/hic_results/data/merged/merged.allValidPairs
+ValidPairs=/mnt2/maxuxu_tmp/02_hicpro_used_V2/01_combined_SNP_sub_genome/B73_H3K4me3_rep1.combined.allValidPairs
+# File containing the bin intervals (according to a specified bin size)
+# which is an output of HiC-pro pipeline
+# If not provided, this is computed from the parameter 1
+#Interval=/mnt2/maxuxu_tmp/02_hicpro/B73_H3K27ac_rep1_map_to_b73_v4_MA/hic_results/matrix/B73_H3K27ac_rep1/raw/5000/B73_H3K27ac_rep1_5000_abs.bed
+#Interval=/mnt2/maxuxu/data/temp/hicprotest-B73-SimuB73ref-rep1-H3K27ac-rest-results/hic_results/matrix/merged/raw/5000/B73-rep1-H3K27ac_5000_abs.bed
+# File storing the contact matrix (output of HiC-pro pipeline)
+# should be accompanied with the parameter 2
+# if not specified, computed from the parameter 1
+#Matrix=/mnt2/maxuxu_tmp/02_hicpro/B73_H3K27ac_rep1_map_to_b73_v4_MA/hic_results/matrix/B73_H3K27ac_rep1/raw/5000/B73_H3K27ac_rep1_5000.matrix
+#Matrix=/mnt2/maxuxu/data/temp/hicprotest-B73-SimuB73ref-rep1-H3K27ac-rest-results/hic_results/matrix/merged/raw/5000/B73-rep1-H3K27ac_5000.matrix
+# Pre-computed locus pair file
+# of the format: 
+# chr1 	start1 	end1 	chr2 	start2 	end2 	contactcounts
+Bed=
+
+# File containing reference ChIP-seq / HiChIP peaks (in .bed format)
+# mandatory parameter
+#PeakFile=/home/springer/liang795/projects-in-nathan-lab/HiChip/2021-analysis/NewChipSeq2021/AlignedSimuB73ref/B73-H3K27ac-2reps/B73-H3K27ac-2reps_peaks.narrowPeak
+PeakFile=/mnt2/maxuxu_tmp/04_chip_seq_used_peak/00_bam_file/B73_H3K4me3.combined.narrowPeak
+# Output base directory under which all results will be stored
+#OutDir=/scratch.global/liang795/HiChIP/Mo17RefGenome/B73-to-SimuB73ref/hicprotest-B73-SimuB73ref-rep1-H3K27ac-rest-results/B73-SimuB73ref-rep1-H3K27ac-Mo17ref-PtoA/
+OutDir=/mnt2/maxuxu_tmp/02_hichip_project_plot/00_replication_loop_new_chipseq_peak/01_combined_chipseq_peak/B73_H3K4me3_rep1_combined_fithichip
+#Interaction type - 1: peak to peak 2: peak to non peak 3: peak to all (default) 4: all to all 5: everything from 1 to 4.
+IntType=3
+
+# Size of the bins [default = 5000], in bases, for detecting the interactions.
+BINSIZE=5000
+
+# Lower distance threshold of interaction between two segments
+# (default = 20000 or 20 Kb)
+LowDistThr=20000
+
+# Upper distance threshold of interaction between two segments
+# (default = 2000000 or 2 Mb)
+UppDistThr=2000000
+
+# Applicable only for peak to all output interactions - values: 0 / 1
+# if 1, uses only peak to peak loops for background modeling - corresponds to FitHiChIP(S)
+# if 0, uses both peak to peak and peak to nonpeak loops for background modeling - corresponds to FitHiChIP(L)
+UseP2PBackgrnd=0
+
+# parameter signifying the type of bias vector - values: 1 / 2
+# 1: coverage bias regression	2: ICE bias regression
+BiasType=1
+
+# following parameter, if 1, means that merge filtering (corresponding to either FitHiChIP(L+M) or FitHiChIP(S+M))
+# depending on the background model, would be employed. Otherwise (if 0), no merge filtering is employed. Default: 1
+MergeInt=1
+
+# FDR (q-value) threshold for loop significance
+QVALUE=0.01
+
+# File containing chromomosome size values corresponding to the reference genome.
+#ChrSizeFile=/home/springer/liang795/genomeinfo/HiChiP-file/Mo17-chromosome-noscaffold.sizes
+ChrSizeFile=/mnt2/maxuxu_tmp/02_hicpro_used/test/combined.chromosome_size
+
+# prefix string of all the output files (Default = 'FitHiChIP').
+PREFIX=FitHiChIP
+
+# Binary variable 1/0: if 1, overwrites any existing output file. otherwise (0), does not overwrite any output file.
+OverWrite=1
+
